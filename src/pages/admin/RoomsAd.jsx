@@ -3,7 +3,9 @@ import { getRooms, getLoaiPhong } from "../../services/api";
 import "../../styles/admin.css";
 import "../../styles/roomsAdmin.css";
 
-const API = "http://localhost:8080/api/phong";
+import { API_URL } from "../../services/backend";
+
+const API = `${API_URL}/phong`;
 
 export default function RoomsAd() {
   const token = localStorage.getItem("token");
@@ -58,7 +60,7 @@ export default function RoomsAd() {
 
   const loadChiNhanh = async () => {
     try {
-      const res = await fetch("http://localhost:8080/api/chinhanh", {
+      const res = await fetch(`${API_URL}/chinhanh`, {
         headers,
       });
       const result = await res.json();

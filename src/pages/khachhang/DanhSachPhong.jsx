@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams, Link, useLocation } from "react-router-dom";
 import axios from "axios";
+import { API_URL, getRoomImageUrl } from "../../services/backend";
 
 const getImage = (img) => {
   if (!img) {
@@ -8,10 +9,10 @@ const getImage = (img) => {
   }
   // DB lưu abc.jpg
   if (!img.startsWith("/uploads")) {
-    return `http://localhost:8080/uploads/loaiphong/${img}`;
+    return getRoomImageUrl(img);
   }
   // DB lưu /uploads/loaiphong/abc.jpg
-  return `http://localhost:8080${img}`;
+  return getRoomImageUrl(img);
 };
 
 export default function DanhSachPhong() {
@@ -33,7 +34,7 @@ export default function DanhSachPhong() {
   const fetchRooms = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:8080/api/loaiphong/${maLoai}/phongs`,
+        `${API_URL}/loaiphong/${maLoai}/phongs`,
 
         {
           params: {
@@ -169,7 +170,7 @@ export default function DanhSachPhong() {
           {rooms.map((room) => (
             <div key={room.MaPhong} className="room-row-card">
               <div className="room-image">
-                <img src={getImage(room.HinhAnh)} alt={room.TenLoai} />
+                <img src={getRoomImageUrl(room.HinhAnh)} alt={room.TenLoai} />
               </div>
 
               <div className="room-info">

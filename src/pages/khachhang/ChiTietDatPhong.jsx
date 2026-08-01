@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import api from "../../services/api";
+import { getRoomImageUrl } from "../../services/backend";
 import "../../styles/ChiTietDatPhong.css";
 
 export default function ChiTietDatPhong() {
@@ -43,7 +44,7 @@ export default function ChiTietDatPhong() {
       </button>
 
       <div className="detail-card">
-        <img src={`http://localhost:8080${booking.HinhAnh}`} alt="" />
+        <img src={getRoomImageUrl(booking.HinhAnh)} alt={booking.TenLoai} />
 
         <div className="detail-right">
           <div className="detail-header">

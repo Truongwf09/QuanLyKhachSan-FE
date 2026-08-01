@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import albumIcon from "../../assets/album.png";
 import "../../styles/admin.css";
 import "../../styles/roomtypesAdmin.css";
+import { API_URL, getRoomImageUrl } from "../../services/backend";
 
-const API = "http://localhost:8080/api/loaiphong";
+const API = `${API_URL}/loaiphong`;
 
 export default function RoomTypesAd() {
   const token = localStorage.getItem("token");
@@ -44,7 +45,7 @@ export default function RoomTypesAd() {
   };
   const loadBranches = async () => {
     try {
-      const res = await fetch("http://localhost:8080/api/chinhanh", {
+      const res = await fetch(`${API_URL}/chinhanh`, {
         headers,
       });
 
@@ -322,7 +323,7 @@ export default function RoomTypesAd() {
             <div className="current-image">
               {editing.HinhAnh ? (
                 <img
-                  src={`http://localhost:8080${editing.HinhAnh}`}
+                  src={getRoomImageUrl(editing.HinhAnh)}
                   className="type-preview img"
                   alt={editing.TenLoai}
                   onError={(e) => {
@@ -424,7 +425,7 @@ export default function RoomTypesAd() {
 
               <span>
                 <img
-                  src={`http://localhost:8080${lp.HinhAnh}`}
+                  src={getRoomImageUrl(lp.HinhAnh)}
                   className="type-img"
                   alt={lp.TenLoai}
                   onError={(e) => {

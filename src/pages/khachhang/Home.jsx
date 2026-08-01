@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
+import { getRoomImageUrl } from "../../services/backend";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Select from "react-select";
@@ -75,16 +76,19 @@ export default function Home() {
     return () => clearInterval(timer);
   }, []);
 
-  const getImage = (img) => {
-    if (!img) {
-      return "https://placehold.co/600x400?text=No+Image";
-    }
-    if (!img.startsWith("/uploads")) {
-      return `http://localhost:8080/uploads/loaiphong/${img}`;
-    }
-    return `http://localhost:8080${img}`;
-  };
+const BACKEND_URL = "https://quanlykhachsan-be.onrender.com";
 
+const getImage = (img) => {
+  if (!img) {
+    return "https://placehold.co/600x400?text=No+Image";
+  }
+
+  if (!img.startsWith("/uploads")) {
+    return `${BACKEND_URL}/uploads/loaiphong/${img}`;
+  }
+
+  return `${BACKEND_URL}${img}`;
+};
   const handleSearch = async () => {
     try {
       const res = await api.get("/loaiphong/filter", {
@@ -266,7 +270,7 @@ export default function Home() {
                 className="room-card"
                 onClick={() => navigate(`/loaiphong/${lp.MaLoai}/phongs`)}
               >
-                <img src={getImage(lp.HinhAnh)} alt={lp.TenLoai} />
+                <img src={getRoomImageUrl(lp.HinhAnh)} alt={lp.TenLoai} />
                 <div className="card-body">
                   <h3>{lp.TenLoai}</h3>
                   <p>{lp.MoTa}</p>

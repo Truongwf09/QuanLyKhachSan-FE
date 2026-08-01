@@ -1,7 +1,8 @@
 import axios from "axios";
+import { API_URL } from "./backend";
 
 const api = axios.create({
-  baseURL: "https://quanlykhachsan-be.onrender.com/api",
+  baseURL: API_URL,
 });
 
 api.interceptors.request.use((config) => {

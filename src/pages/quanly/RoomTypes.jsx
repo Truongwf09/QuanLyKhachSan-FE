@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import albumIcon from "../../assets/album.png";
 import "../../styles/admin.css";
 import "../../styles/roomtypesQL.css";
+import { API_URL, getRoomImageUrl } from "../../services/backend";
 
 import { FaPlus, FaEdit, FaTrash, FaEye } from "react-icons/fa";
 
-const API = "http://localhost:8080/api/loaiphong";
+const API = `${API_URL}/loaiphong`;
 
 export default function RoomTypes() {
   const token = localStorage.getItem("token");
@@ -273,7 +274,7 @@ export default function RoomTypes() {
             <div className="current-image">
               {editing.HinhAnh ? (
                 <img
-                  src={`http://localhost:8080${editing.HinhAnh}`}
+                  src={getRoomImageUrl(editing.HinhAnh)}
                   className="type-preview img"
                   alt={editing.TenLoai}
                   onError={(e) => {
@@ -358,7 +359,7 @@ export default function RoomTypes() {
               <span>{lp.MoTa}</span>
               <span>
                 <img
-                  src={`http://localhost:8080${lp.HinhAnh}`}
+                  src={getRoomImageUrl(lp.HinhAnh)}
                   className="type-image"
                   alt={lp.TenLoai}
                   onError={(e) => {

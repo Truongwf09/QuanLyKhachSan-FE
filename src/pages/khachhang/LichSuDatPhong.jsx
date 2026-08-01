@@ -3,6 +3,7 @@ import api from "../../services/api";
 import "../../styles/LichSuDatPhong.css";
 import { useNavigate } from "react-router-dom";
 import { FaEye, FaStar, FaCheckCircle } from "react-icons/fa";
+import { getRoomImageUrl } from "../../services/backend";
 
 export default function LichSuDatPhong() {
   const [bookings, setBookings] = useState([]);
@@ -68,7 +69,7 @@ export default function LichSuDatPhong() {
         return (
           <div className="booking-card" key={item.MaDP}>
             <img
-              src={`http://localhost:8080${item.HinhAnh}`}
+              src={getRoomImageUrl(item.HinhAnh)}
               alt={item.TenLoai}
             />
 

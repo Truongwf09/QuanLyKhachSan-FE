@@ -5,6 +5,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Select from "react-select";
 import { useNavigate } from "react-router-dom";
+import { getRoomImageUrl } from "../../services/backend";
 
 export default function LoaiPhong() {
   const [roomTypes, setRoomTypes] = useState([]); // Danh sách đang hiển thị
@@ -52,21 +53,21 @@ export default function LoaiPhong() {
   //   }
   // };
 
-  const getImage = (img) => {
-    if (!img) {
-      return "http://localhost:8080/uploads/loaiphong/default.jpg";
-    }
+const BACKEND_URL = "https://quanlykhachsan-be.onrender.com";
 
-    // nếu DB lưu:
-    // abc.jpg
-    if (!img.startsWith("/uploads")) {
-      return `http://localhost:8080/uploads/loaiphong/${img}`;
-    }
+const getImage = (img) => {
+  if (!img) {
+    return "https://placehold.co/600x400?text=No+Image";
+  }
 
-    // nếu DB lưu:
-    // /uploads/loaiphong/abc.jpg
-    return `http://localhost:8080${img}`;
-  };
+  // Nếu DB lưu: deluxe.jpg
+  if (!img.startsWith("/uploads")) {
+    return `${BACKEND_URL}/uploads/loaiphong/${img}`;
+  }
+
+  // Nếu DB lưu: /uploads/loaiphong/deluxe.jpg
+  return `${BACKEND_URL}${img}`;
+};
 
   const handleSearch = async () => {
     try {
@@ -272,7 +273,7 @@ export default function LoaiPhong() {
                   }}
                 />` */}
                 <img
-                  src={getImage(item.HinhAnh)}
+                  src={getRoomImageUrl(item.HinhAnh)}
                   alt={item.TenLoai}
                   onError={(e) => {
                     e.target.src = "https://placehold.co/600x400?text=No+Image";

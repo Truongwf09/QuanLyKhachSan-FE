@@ -1,6 +1,8 @@
 import { useEffect, useState, useRef } from "react";
 
-const BASE = "http://localhost:8080/api";
+import { API_URL } from "../../services/backend";
+
+const BASE = API_URL;
 
 const getHeaders = () => ({
   "Content-Type": "application/json",

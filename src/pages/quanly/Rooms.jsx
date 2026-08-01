@@ -5,7 +5,9 @@ import "../../styles/roomsQL.css";
 
 import { FaPlus, FaEdit, FaTrash, FaEye } from "react-icons/fa";
 
-const API = "http://localhost:8080/api/phong";
+import { API_URL } from "../../services/backend";
+
+const API = `${API_URL}/phong`;
 
 export default function Rooms() {
   const token = localStorage.getItem("token");
