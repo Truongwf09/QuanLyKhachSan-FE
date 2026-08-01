@@ -1,10 +1,9 @@
-const configuredBackendUrl = import.meta.env.VITE_BACKEND_URL;
+const configuredApiUrl = import.meta.env.VITE_API_URL?.replace(/\/$/, "");
+const configuredBackendUrl = import.meta.env.VITE_BACKEND_URL?.replace(/\/$/, "");
 
-export const BACKEND_URL = (configuredBackendUrl || "https://quanlykhachsan-be.onrender.com").replace(
-  /\/$/,
-  "",
-);
-export const API_URL = `${BACKEND_URL}/api`;
+export const API_URL =
+  configuredApiUrl || `${configuredBackendUrl || "https://quanlykhachsan-be.onrender.com"}/api`;
+export const BACKEND_URL = configuredBackendUrl || API_URL.replace(/\/api$/, "");
 
 export function getRoomImageUrl(image) {
   if (!image) return "https://placehold.co/600x400?text=No+Image";

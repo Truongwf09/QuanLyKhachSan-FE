@@ -20,8 +20,7 @@ export default function DashboardQL() {
   const loadData = async () => {
     try {
       setLoading(true);
-      const rooms = await getRooms();
-      const loai = await getLoaiPhong();
+      const [rooms, loai] = await Promise.all([getRooms(), getLoaiPhong()]);
 
       setData(rooms);
       setLoaiPhong(loai);

@@ -3,7 +3,19 @@ import { API_URL } from "./backend";
 
 const api = axios.create({
   baseURL: API_URL,
+  timeout: 20000,
 });
+
+const responseCache = new Map();
+
+export async function getCachedData(path, ttl = 5 * 60 * 1000) {
+  const cached = responseCache.get(path);
+  if (cached && Date.now() - cached.createdAt < ttl) return cached.data;
+
+  const { data } = await api.get(path);
+  responseCache.set(path, { data, createdAt: Date.now() });
+  return data;
+}
 
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");

@@ -1,70 +1,71 @@
+import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./pages/auth/Login";
+const Login = lazy(() => import("./pages/auth/Login"));
 import ProtectedRoute from "./routes/ProtectedRoute";
 
 /* Layout */
-import AdminLayout from "./layouts/AdminLayout";
-import QuanLyLayout from "./layouts/QuanLyLayout";
-import TiepTanLayout from "./layouts/TiepTanLayout";
-import KhachHangLayout from "./layouts/KhachHangLayout";
+const AdminLayout = lazy(() => import("./layouts/AdminLayout"));
+const QuanLyLayout = lazy(() => import("./layouts/QuanLyLayout"));
+const TiepTanLayout = lazy(() => import("./layouts/TiepTanLayout"));
+const KhachHangLayout = lazy(() => import("./layouts/KhachHangLayout"));
 
 /* Auth */
-import LoginKH from "./pages/khachhang/LoginKH";
-import Register from "./pages/khachhang/Register";
+const LoginKH = lazy(() => import("./pages/khachhang/LoginKH"));
+const Register = lazy(() => import("./pages/khachhang/Register"));
 
 /* Admin */
-import Dashboard from "./pages/admin/Dashboard";
-import ChiNhanh from "./pages/admin/ChiNhanh";
-import NhanVien from "./pages/admin/NhanVien";
-import PhongAd from "./pages/admin/RoomsAd";
-import LoaiPhongAd from "./pages/admin/RoomTypesAd";
-import ChucVu from "./pages/admin/ChucVu";
-import Quyen from "./pages/admin/Quyen";
-import DanhGia from "./pages/admin/DanhGia";
-import ProfileAd from "./pages/admin/ProfileAd";
+const Dashboard = lazy(() => import("./pages/admin/Dashboard"));
+const ChiNhanh = lazy(() => import("./pages/admin/ChiNhanh"));
+const NhanVien = lazy(() => import("./pages/admin/NhanVien"));
+const PhongAd = lazy(() => import("./pages/admin/RoomsAd"));
+const LoaiPhongAd = lazy(() => import("./pages/admin/RoomTypesAd"));
+const ChucVu = lazy(() => import("./pages/admin/ChucVu"));
+const Quyen = lazy(() => import("./pages/admin/Quyen"));
+const DanhGia = lazy(() => import("./pages/admin/DanhGia"));
+const ProfileAd = lazy(() => import("./pages/admin/ProfileAd"));
 /* Quản lý */
-import DashboardQL from "./pages/quanly/DashboardQL";
-import Employees from "./pages/quanly/Employees";
-import Accounts from "./pages/quanly/Accounts";
-import Customers from "./pages/quanly/Customers";
-import Rooms from "./pages/quanly/Rooms";
-import RoomTypes from "./pages/quanly/RoomTypes";
-import BookingCalendarQL from "./pages/quanly/BookingCalendarQL";
-import DichVuQL from "./pages/quanly/DichVu"
-import ProfileQL from "./pages/quanly/ProfileQL";
+const DashboardQL = lazy(() => import("./pages/quanly/DashboardQL"));
+const Employees = lazy(() => import("./pages/quanly/Employees"));
+const Accounts = lazy(() => import("./pages/quanly/Accounts"));
+const Customers = lazy(() => import("./pages/quanly/Customers"));
+const Rooms = lazy(() => import("./pages/quanly/Rooms"));
+const RoomTypes = lazy(() => import("./pages/quanly/RoomTypes"));
+const BookingCalendarQL = lazy(() => import("./pages/quanly/BookingCalendarQL"));
+const DichVuQL = lazy(() => import("./pages/quanly/DichVu"));
+const ProfileQL = lazy(() => import("./pages/quanly/ProfileQL"));
 /* Lễ tân */
-import Bookings from "./pages/tieptan/Bookings";
-import CheckIn from "./pages/tieptan/Checkin";
-import CheckOut from "./pages/tieptan/Checkout";
-import Services from "./pages/tieptan/Services";
-import BookingCalendarLT from "./pages/tieptan/BookingCalendarLT";
-import DashboardLT from "./pages/tieptan/DashboardLT";
-import HoaDonLT from "./pages/tieptan/HoaDonLT";
-import CheckInQR from "./pages/tieptan/CheckInQR";
-import ProfileLeTan from "./pages/tieptan/ProfileLeTan";
+const Bookings = lazy(() => import("./pages/tieptan/Bookings"));
+const CheckIn = lazy(() => import("./pages/tieptan/Checkin"));
+const CheckOut = lazy(() => import("./pages/tieptan/Checkout"));
+const Services = lazy(() => import("./pages/tieptan/Services"));
+const BookingCalendarLT = lazy(() => import("./pages/tieptan/BookingCalendarLT"));
+const DashboardLT = lazy(() => import("./pages/tieptan/DashboardLT"));
+const HoaDonLT = lazy(() => import("./pages/tieptan/HoaDonLT"));
+const CheckInQR = lazy(() => import("./pages/tieptan/CheckInQR"));
+const ProfileLeTan = lazy(() => import("./pages/tieptan/ProfileLeTan"));
 
 /* Khách hàng */
-import Home from "./pages/khachhang/Home";
-import Profile from "./pages/khachhang/Profile";
-import TypeRoomDetail from "./pages/khachhang/TypeRoomDetail";
-import DatPhong from "./pages/khachhang/DatPhong";
-import LoaiPhong from "./pages/khachhang/LoaiPhong";
-import DanhSachPhong from "./pages/khachhang/DanhSachPhong";
-import ThanhToan from "./pages/khachhang/ThanhToan";
-import LichSuDatPhong from "./pages/khachhang/LichSuDatPhong";
+const Home = lazy(() => import("./pages/khachhang/Home"));
+const Profile = lazy(() => import("./pages/khachhang/Profile"));
+const DatPhong = lazy(() => import("./pages/khachhang/DatPhong"));
+const LoaiPhong = lazy(() => import("./pages/khachhang/LoaiPhong"));
+const DanhSachPhong = lazy(() => import("./pages/khachhang/DanhSachPhong"));
+const ThanhToan = lazy(() => import("./pages/khachhang/ThanhToan"));
+const LichSuDatPhong = lazy(() => import("./pages/khachhang/LichSuDatPhong"));
 //import DanhSachPhong from "./pages/khachhang/DanhSachPhong";
 //import ChiTietPhong from "./pages/khachhang/ChiTietPhong";
-import ChiTietDatPhong from "./pages/khachhang/ChiTietDatPhong";
-import Review from "./pages/khachhang/Review"
-import RoomReview from "./pages/khachhang/RoomReview"
-import About from "./pages/khachhang/About";
-import Contact from "./pages/khachhang/Contact";
-import BookingDetailQR from "./pages/khachhang/BookingDetailQR";
+const ChiTietDatPhong = lazy(() => import("./pages/khachhang/ChiTietDatPhong"));
+const Review = lazy(() => import("./pages/khachhang/Review"));
+const RoomReview = lazy(() => import("./pages/khachhang/RoomReview"));
+const About = lazy(() => import("./pages/khachhang/About"));
+const Contact = lazy(() => import("./pages/khachhang/Contact"));
+const BookingDetailQR = lazy(() => import("./pages/khachhang/BookingDetailQR"));
 
 function App() {
 
   return (
     <BrowserRouter>
+      <Suspense fallback={<div className="app-loading" aria-live="polite">Đang tải...</div>}>
 
       <Routes>
 
@@ -304,6 +305,7 @@ function App() {
 
 
       </Routes>
+      </Suspense>
 
     </BrowserRouter>
   );

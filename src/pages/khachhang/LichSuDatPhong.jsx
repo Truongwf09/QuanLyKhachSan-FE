@@ -17,19 +17,18 @@ export default function LichSuDatPhong() {
   }, []);
 
   const loadReviewed = async (list) => {
-    const result = {};
-
-    for (const item of list) {
+    const results = await Promise.all(
+      list.map(async (item) => {
       try {
         const res = await api.get(`/danhgia/check/${item.MaDP}`);
-
-        result[item.MaDP] = res.data.reviewed;
+        return [item.MaDP, res.data.reviewed];
       } catch {
-        result[item.MaDP] = false;
+        return [item.MaDP, false];
       }
-    }
+      }),
+    );
 
-    setReviewed(result);
+    setReviewed(Object.fromEntries(results));
   };
 
   const loadBookings = async () => {

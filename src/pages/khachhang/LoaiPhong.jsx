@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import api from "../../services/api";
+import api, { getCachedData } from "../../services/api";
 import { Link } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -24,14 +24,14 @@ export default function LoaiPhong() {
     const loadData = async () => {
       try {
         const [cnRes, lpRes] = await Promise.all([
-          api.get("/chinhanh/public"),
-          api.get("/loaiphong/public"),
+          getCachedData("/chinhanh/public"),
+          getCachedData("/loaiphong/public"),
         ]);
 
-        setChiNhanh(cnRes.data);
+        setChiNhanh(cnRes);
 
-        setRoomTypes(lpRes.data);
-        setAllRoomTypes(lpRes.data);
+        setRoomTypes(lpRes);
+        setAllRoomTypes(lpRes);
       } catch (err) {
         console.error(err);
       } finally {

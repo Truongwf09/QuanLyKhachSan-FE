@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import api from "../../services/api";
+import api, { getCachedData } from "../../services/api";
 import { getRoomImageUrl } from "../../services/backend";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -58,13 +58,11 @@ export default function Home() {
   useEffect(() => {
     (async () => {
       const [cnRes, lpRes] = await Promise.all([
-        api.get("/chinhanh"),
-        api.get("/loaiphong/public"),
+        getCachedData("/chinhanh/public"),
+        getCachedData("/loaiphong/public"),
       ]);
-      console.log("Chi nhánh:", cnRes.data);
-      console.log("Loại phòng:", lpRes.data);
-      setChiNhanh(cnRes.data);
-      setLoaiPhong(lpRes.data);
+      setChiNhanh(cnRes);
+      setLoaiPhong(lpRes);
     })();
   }, []);
 
