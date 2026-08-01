@@ -51,7 +51,7 @@ import DatPhong from "./pages/khachhang/DatPhong";
 import LoaiPhong from "./pages/khachhang/LoaiPhong";
 import DanhSachPhong from "./pages/khachhang/DanhSachPhong";
 import ThanhToan from "./pages/khachhang/ThanhToan";
-import LichSuDatPhong from "./pages/KhachHang/LichSuDatPhong";
+import LichSuDatPhong from "./pages/khachhang/LichSuDatPhong";
 //import DanhSachPhong from "./pages/khachhang/DanhSachPhong";
 //import ChiTietPhong from "./pages/khachhang/ChiTietPhong";
 import ChiTietDatPhong from "./pages/khachhang/ChiTietDatPhong";
