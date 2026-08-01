@@ -15,6 +15,7 @@ export default function DatPhong() {
     location.state?.room && location.state.room.MaPhong
       ? location.state.room
       : null;
+  const filtersFromState = location.state?.filters || {};
   const isDirectBooking = !selectedRoomFromState;
 
   // Quản lý các bước: 1: Chọn phòng -> 2: Thông tin -> 3: Dịch vụ -> 4: Xác nhận -> 5: Thành công
@@ -27,15 +28,26 @@ export default function DatPhong() {
   const [dichVuList, setDichVuList] = useState([]);
 
   // State quản lý việc lựa chọn của Khách hàng
-  const [selectedCN, setSelectedCN] = useState("");
-  const [selectedLoaiPhong, setSelectedLoaiPhong] = useState("");
+  const [selectedCN, setSelectedCN] = useState(
+    selectedRoomFromState?.MaCN || filtersFromState.MaCN || "",
+  );
+  const [selectedLoaiPhong, setSelectedLoaiPhong] = useState(
+    selectedRoomFromState?.MaLoai || filtersFromState.MaLoai || "",
+  );
   const [selectedRoom, setSelectedRoom] = useState(selectedRoomFromState);
 
   // Thời gian lưu trú
-  const [loaiDat, setLoaiDat] = useState("theo ngày");
-  const [dateRange, setDateRange] = useState([null, null]);
+  const [loaiDat, setLoaiDat] = useState(
+    selectedRoomFromState
+      ? "theo ngày"
+      : filtersFromState.LoaiDat || "theo ngày",
+  );
+  const [dateRange, setDateRange] = useState([
+    filtersFromState.NgayNhan ? new Date(filtersFromState.NgayNhan) : null,
+    filtersFromState.NgayTra ? new Date(filtersFromState.NgayTra) : null,
+  ]);
   const [startDate, endDate] = dateRange;
-  const [soGio, setSoGio] = useState(2);
+  const [soGio, setSoGio] = useState(filtersFromState.SoGio || 2);
 
   // Số lượng dịch vụ: { [MaDV]: SoLuong }
   const [serviceQuantities, setServiceQuantities] = useState({});
@@ -104,7 +116,15 @@ export default function DatPhong() {
       .then((res) => {
         // Nếu API bọc trong res.data.data thì lấy res.data.data, ngược lại lấy res.data
         const data = res.data?.data || res.data;
-        setChiNhanh(Array.isArray(data) ? data : []);
+        const list = Array.isArray(data) ? data : [];
+        setChiNhanh(list);
+
+        if (!selectedRoomFromState && filtersFromState.MaCN) {
+          const branchExists = list.some((cn) => cn.MaCN === filtersFromState.MaCN);
+          if (branchExists) {
+            setSelectedCN(filtersFromState.MaCN);
+          }
+        }
       })
       .catch((err) => console.error("Lỗi lấy chi nhánh:", err));
 
@@ -113,6 +133,8 @@ export default function DatPhong() {
       setSelectedCN(selectedRoomFromState.MaCN);
       setSelectedLoaiPhong(selectedRoomFromState.MaLoai);
       loadDichVuTheoCN(selectedRoomFromState.MaCN);
+    } else if (filtersFromState.MaCN) {
+      loadDichVuTheoCN(filtersFromState.MaCN);
     }
   }, []);
 
