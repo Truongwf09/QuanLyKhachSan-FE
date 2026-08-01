@@ -138,6 +138,20 @@ export default function DatPhong() {
     }
   }, []);
 
+  useEffect(() => {
+    if (
+      !selectedRoomFromState &&
+      filtersFromState.MaCN &&
+      chiNhanh.length > 0 &&
+      !selectedCN
+    ) {
+      setSelectedCN(filtersFromState.MaCN);
+      if (filtersFromState.MaLoai) {
+        setSelectedLoaiPhong(filtersFromState.MaLoai);
+      }
+    }
+  }, [chiNhanh, filtersFromState, selectedCN, selectedRoomFromState]);
+
   // --- EFFECT 2: TỰ ĐỘNG TẢI LOẠI PHÒNG & DỊCH VỤ THEO CHI NHÁNH ĐÃ CHỌN ---
   useEffect(() => {
     if (isDirectBooking && selectedCN) {
