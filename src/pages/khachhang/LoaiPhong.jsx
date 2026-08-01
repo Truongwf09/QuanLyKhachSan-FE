@@ -203,10 +203,16 @@ const getImage = (img) => {
                   label: cn.TenCN,
                 })),
               ]}
-              defaultValue={{
-                value: "",
-                label: "Tất cả chi nhánh",
-              }}
+              value={
+                filters.MaCN
+                  ? {
+                      value: filters.MaCN,
+                      label:
+                        chiNhanh.find((cn) => cn.MaCN === filters.MaCN)?.TenCN ||
+                        "Tất cả chi nhánh",
+                    }
+                  : { value: "", label: "Tất cả chi nhánh" }
+              }
               onChange={handleChiNhanhChange}
               styles={selectStyles}
             />
@@ -220,12 +226,16 @@ const getImage = (img) => {
                   label: lp.TenLoai,
                 })),
               ]}
-              value={{
-                value: filters.MaLoai,
-                label:
-                  roomTypes.find((x) => x.MaLoai === filters.MaLoai)?.TenLoai ||
-                  "Tất cả loại phòng",
-              }}
+              value={
+                filters.MaLoai
+                  ? {
+                      value: filters.MaLoai,
+                      label:
+                        roomTypes.find((x) => x.MaLoai === filters.MaLoai)
+                          ?.TenLoai || "Tất cả loại phòng",
+                    }
+                  : { value: "", label: "Tất cả loại phòng" }
+              }
               onChange={(option) =>
                 setFilters((prev) => ({
                   ...prev,
@@ -295,6 +305,7 @@ const getImage = (img) => {
                 <Link
                   className="button-xem-lp"
                   to={`/loaiphong/${item.MaLoai}/phongs`}
+                  state={{ filters }}
                 >
                   Xem phòng →
                 </Link>
