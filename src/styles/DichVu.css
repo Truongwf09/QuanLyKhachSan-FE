@@ -1,0 +1,470 @@
+.dichvu-page {
+    padding: 32px;
+}
+
+.dichvu-card {
+    background: #fff;
+    border-radius: 22px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+}
+
+.dichvu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.dichvu-title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #16345f;
+}
+
+.statistic-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-bottom: 30px;
+}
+
+.statistic-card {
+
+    background: #f8fbff;
+
+    border: 1px solid #e7edf5;
+
+    border-radius: 18px;
+
+    padding: 24px;
+
+    transition: .25s;
+
+}
+
+.statistic-card:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 22px rgba(0, 0, 0, .08);
+
+}
+
+.statistic-card h4 {
+
+    color: #64748b;
+
+    font-size: 15px;
+
+    margin-bottom: 12px;
+
+}
+
+.statistic-card h2 {
+
+    font-size: 38px;
+
+    font-weight: 700;
+
+}
+
+.toolbar {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+
+}
+
+.toolbar-left {
+
+    display: flex;
+
+    gap: 18px;
+
+    align-items: center;
+
+}
+
+.search-box {
+
+    width: 340px;
+
+    height: 46px;
+
+    border-radius: 12px;
+
+    border: 1px solid #dbe5ef;
+
+    padding: 0 18px;
+
+    font-size: 15px;
+
+}
+
+.search-box:focus {
+
+    border-color: #11a8a8;
+
+    box-shadow: 0 0 0 3px rgba(17, 168, 168, .15);
+
+}
+
+.btn-add {
+
+    background: #16b2b2;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 12px;
+
+    height: 46px;
+
+    padding: 0 28px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .2s;
+
+}
+
+.btn-add:hover {
+
+    background: #0f9b9b;
+
+}
+
+.table-wrapper {
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    border: 1px solid #edf2f7;
+
+}
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+thead {
+
+    background: #14a8a8;
+
+}
+
+th {
+
+    color: white;
+
+    padding: 18px;
+
+    font-size: 16px;
+
+}
+
+td {
+
+    padding: 18px;
+
+    border-bottom: 1px solid #edf2f7;
+
+    font-size: 15px;
+
+}
+
+tbody tr {
+
+    transition: .2s;
+
+}
+
+tbody tr:hover {
+
+    background: #f7fbff;
+
+}
+
+.badge-active {
+
+    background: #dcfce7;
+
+    color: #15803d;
+
+    padding: 8px 16px;
+
+    border-radius: 999px;
+
+    font-weight: 600;
+
+}
+
+.badge-hide {
+
+    background: #fee2e2;
+
+    color: #dc2626;
+
+    padding: 8px 16px;
+
+    border-radius: 999px;
+
+    font-weight: 600;
+
+}
+
+.action-group {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+}
+
+.action-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Style chung */
+.btn-edit,
+.btn-hide,
+.btn-show {
+
+    min-width: 72px;
+    height: 38px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    border-radius: 10px;
+
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: .25s;
+
+    padding: 0 18px;
+}
+
+/* Sửa */
+.btn-edit {
+    background: #3b82f6;
+}
+
+.btn-edit:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+/* Ẩn */
+.btn-hide {
+    background: #ef4444;
+}
+
+.btn-hide:hover {
+    background: #dc2626;
+    transform: translateY(-2px);
+}
+
+/* Hiện */
+.btn-show {
+    background: #22c55e;
+}
+
+.btn-show:hover {
+    background: #16a34a;
+    transform: translateY(-2px);
+}
+
+.btn-show {
+
+    background: #22c55e;
+
+    color: white;
+
+    border: none;
+
+    padding: 8px 18px;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+}
+
+.pagination {
+
+    margin-top: 26px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+.pagination button {
+
+    width: 42px;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: white;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, .08);
+
+}
+
+.pagination .active {
+
+    background: #16b2b2;
+
+    color: white;
+
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, .45);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-box {
+    width: 560px;
+    background: #fff;
+    border-radius: 22px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .25);
+    animation: popup .25s ease;
+}
+
+.modal-box h3 {
+    margin: 0 0 28px;
+    text-align: center;
+    color: #16345f;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    border: 1px solid #dbe5ef;
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 15px;
+    outline: none;
+    transition: .25s;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #16b2b2;
+    box-shadow: 0 0 0 3px rgba(22, 178, 178, .15);
+}
+
+.form-group textarea {
+    resize: none;
+    min-height: 110px;
+}
+
+.modal-action {
+    margin-top: 28px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 14px;
+}
+
+.btn-cancel {
+    border: none;
+    background: #e2e8f0;
+    color: #334155;
+    border-radius: 12px;
+    height: 46px;
+    padding: 0 28px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-save {
+    border: none;
+    background: #16b2b2;
+    color: #fff;
+    border-radius: 12px;
+    height: 46px;
+    padding: 0 28px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-save:hover {
+    background: #0f9b9b;
+}
+
+.btn-cancel:hover {
+    background: #cbd5e1;
+}
+
+@keyframes popup {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}

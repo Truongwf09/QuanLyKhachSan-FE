@@ -1,0 +1,267 @@
+/* ==========================================
+            EMPLOYEES
+========================================== */
+
+.emp-page{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:24px;
+
+}
+
+.emp-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.emp-header h2{
+
+    font-size:30px;
+
+    color:#1e293b;
+
+    font-weight:700;
+
+}
+
+.emp-add{
+
+    background:#4f7cff;
+
+    color:white;
+
+    border:none;
+
+    padding:11px 18px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.emp-add:hover{
+
+    background:#3568ea;
+
+}
+/* ==========================================
+                FORM
+========================================== */
+
+.emp-form{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:22px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(220px,1fr));
+
+    gap:15px;
+
+    box-shadow:
+        0 6px 18px rgba(0,0,0,.06);
+
+}
+
+.emp-form input,
+.emp-form select{
+
+    padding:11px 14px;
+
+    border:1px solid #dbe3f1;
+
+    border-radius:10px;
+
+    outline:none;
+
+}
+
+.emp-form input:focus,
+.emp-form select:focus{
+
+    border-color:#4f7cff;
+
+}
+
+.emp-form-buttons{
+
+    grid-column:1/-1;
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.emp-save{
+
+    background:#4f7cff;
+
+    color:white;
+
+    border:none;
+
+    padding:11px 18px;
+
+    border-radius:10px;
+
+}
+
+.emp-cancel{
+
+    background:#ef4444;
+
+    color:white;
+
+    border:none;
+
+    padding:11px 18px;
+
+    border-radius:10px;
+
+}
+/* ==========================================
+                TABLE
+========================================== */
+
+.emp-table{
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 6px 18px rgba(0,0,0,.06);
+
+}
+
+.emp-table-header{
+
+    display:grid;
+
+    grid-template-columns:
+
+        100px
+        1.4fr
+        2fr
+        1.4fr
+        180px;
+
+    padding:16px 20px;
+
+    background:#e8edf7;
+
+    font-weight:700;
+
+}
+
+.emp-table-row{
+
+    display:grid;
+
+    grid-template-columns:
+
+        100px
+        1.4fr
+        2fr
+        1.4fr
+        180px;
+
+    padding:16px 20px;
+
+    align-items:center;
+
+    border-top:1px solid #edf2f7;
+
+    transition:.25s;
+
+}
+
+.emp-table-row:hover{
+
+    background:#f8fbff;
+
+}
+/* ==========================================
+                ACTION
+========================================== */
+
+.emp-actions{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:8px;
+
+}
+
+.emp-icon{
+
+    width:38px;
+
+    height:38px;
+
+    border:none;
+
+    border-radius:10px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.emp-icon:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.emp-icon.edit{
+
+    background:#eef4ff;
+
+    color:#2563eb;
+
+}
+
+.emp-icon.delete{
+
+    background:#fff2f2;
+
+    color:#dc2626;
+
+}
+
+.emp-icon.view{
+
+    background:#edfdf3;
+
+    color:#16a34a;
+
+}

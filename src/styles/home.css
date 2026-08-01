@@ -1,0 +1,194 @@
+/* RESET */
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+/* HEADER */
+.header-kh {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 40px;
+  z-index: 1000;
+
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(10px);
+}
+
+.header-kh nav {
+  display: flex;
+  gap: 50px;
+}
+
+.header-kh nav a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+
+  position: relative;   /* 👉 để làm gạch chân */
+  padding: 4px 0;
+
+  transition: all 0.2s ease;
+}
+
+.header-kh a:hover {
+  font-weight: 600;
+}
+
+.header-kh nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+
+  width: 0%;
+  height: 4px;
+  background: rgb(240, 212, 178);
+
+  transition: 0.3s ease;
+}
+
+.header-kh nav a:hover::after {
+  width: 100%;
+}
+
+.header-kh nav a.active {
+  font-weight: 600;
+}
+
+.header-kh nav a.active::after {
+  width: 100%;
+}
+
+.header-kh a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+.login-btn {
+  background: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+}
+
+/* CONTENT */
+.content {
+  margin-top: 70px;
+}
+
+/* HERO */
+.hero {
+  height: 50vh;
+  background-image: url("/banner.jpeg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 48px;
+}
+
+.hero p {
+  margin-top: 10px;
+}
+
+/* SEARCH */
+.search-box {
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 5px;
+  border-radius: 40px;
+  width: 650px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.search-box input,
+.search-box select {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 12px 15px;
+}
+
+.search-box > *:not(:last-child) {
+  border-right: 1px solid #eee;
+}
+
+.search-box button {
+  background: rgb(240, 212, 178);
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 30px;
+}
+
+/* LIST */
+.list {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 280px;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h3 {
+  padding: 10px;
+}
+
+.card p {
+  padding: 0 10px 10px;
+  color: #555;
+}

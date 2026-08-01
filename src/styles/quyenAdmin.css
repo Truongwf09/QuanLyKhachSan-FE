@@ -1,0 +1,343 @@
+/* ==================================
+            QUYỀN
+================================== */
+
+.permission-page{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:24px;
+
+}
+
+.permission-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.permission-header h2{
+
+    font-size:28px;
+
+    color:#1e293b;
+
+    font-weight:700;
+
+}
+
+.permission-card {
+    background: #f8fafc;
+    border-radius: 18px;
+    padding: 18px;
+    margin-bottom: 22px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,.05);
+}
+.permission-card input {
+    flex: 1 1 220px;
+
+    padding: 10px 14px;
+
+    border: 1px solid #dbe3f1;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: .2s;
+}
+
+.permission-table {
+
+    background:#fff;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,.05);
+}
+.permission-table-header {
+    display:grid;
+
+    grid-template-columns:
+
+        350px
+        350px
+        2fr
+        170px
+        160px;
+
+    align-items:center;
+
+    background:#e8edf7;
+
+    color:#475569;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    padding:16px 20px;
+}
+.permission-table-row {
+
+    display:grid;
+
+    grid-template-columns:
+
+        350px
+        350px
+        2fr
+        170px
+        160px;
+
+    align-items:center;
+
+    padding:16px 20px;
+
+    border-top:1px solid #edf2f7;
+
+    transition:.2s;
+}
+
+
+
+/* ===========================
+        ROLE LIST
+=========================== */
+
+/* .role-list{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(240px,1fr));
+
+    gap:18px;
+
+}
+
+.role-card{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,.05);
+
+}
+
+.role-card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(0,0,0,.10);
+
+}
+
+.role-card.active{
+
+    border:2px solid #4f7cff;
+
+}
+
+.role-name{
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:#1e293b;
+
+}
+
+.role-desc{
+
+    margin-top:8px;
+
+    color:#64748b;
+
+    font-size:14px;
+
+}
+
+/* ==================================
+        PERMISSION BOX
+================================== */
+/* .permission-box{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:22px;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,.05);
+
+}
+
+.permission-box h3{
+
+    margin-bottom:18px;
+
+    color:#1e293b;
+
+}
+
+.permission-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(240px,1fr));
+
+    gap:14px;
+
+}
+
+.permission-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    background:#f8fafc;
+
+    border-radius:12px;
+
+    padding:14px;
+
+    transition:.2s;
+
+}
+
+.permission-item:hover{
+
+    background:#eef4ff;
+
+}
+
+.permission-item input{
+
+    width:18px;
+
+    height:18px;
+
+    cursor:pointer;
+
+}
+
+.permission-label{
+
+    font-size:15px;
+
+    color:#334155;
+
+} */ 
+
+/* ==================================
+            BUTTON
+================================== */
+
+.permission-actions{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:12px;
+
+}
+
+.permission-save{
+
+    background:#4f7cff;
+
+    color:#fff;
+
+    border:none;
+
+    padding:11px 20px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+}
+
+.permission-save:hover{
+
+    background:#3568ea;
+
+}
+
+.permission-cancel{
+
+    background:#ef4444;
+
+    color:#fff;
+
+    border:none;
+
+    padding:11px 20px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+}
+
+.permission-cancel:hover{
+
+    background:#dc2626;
+
+}
+
+
+/* ==================================
+        RESPONSIVE
+================================== */
+
+@media(max-width:768px){
+
+    .permission-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .role-list{
+
+        grid-template-columns:1fr;
+
+    }
+
+}

@@ -1,0 +1,363 @@
+/* ==========================================================================
+   CONTACT PAGE STYLE - TEALHAVEN
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+.contact-page {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 32px 60px;
+  font-family: 'Inter', sans-serif;
+  /* background: #f4f9ff;  */
+  box-sizing: border-box;
+}
+
+.contact-page * {
+  box-sizing: border-box;
+}
+
+/* --- 2. MAIN CONTENT GRID (FORM & NEWSLETTER) --- */
+.contact-main-grid{
+    display:grid;
+    grid-template-columns:1.3fr .7fr;
+    gap:45px;
+    align-items:start;
+    padding:30px 0;
+}
+
+.contact-form-card{
+
+    background:#fff;
+    padding:15px 30px;
+    margin-left: 150px;
+    box-shadow:0 12px 35px rgba(15,76,129,.08);
+    border:1px solid #edf2f7;
+    width:80%;
+
+}
+.form-heading{
+
+    margin-bottom:25px;
+
+}
+
+.form-heading h2{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:40px;
+
+    color:#10233f;
+
+    margin-bottom:10px;
+
+}
+
+.form-heading p{
+
+    color:#64748b;
+
+    line-height:1.8;
+
+    font-size:16px;
+
+    width:90%;
+
+}
+
+/* Left: Contact Form */
+.contact-form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.form-row-double{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:18px;
+
+}
+
+/* Đồng bộ hóa style Input & Textarea dựa trên hình vẽ mẫu */
+.contact-form input,
+.contact-form textarea{
+
+    width:100%;
+
+    background:#fff;
+
+    border:1px solid #dbe5ef;
+
+    border-radius:12px;
+
+    padding:15px 18px;
+
+    font-size:15px;
+
+    color:#10233f;
+
+    transition:.25s;
+
+    outline:none;
+
+}
+
+.contact-form textarea{
+
+    resize:none;
+
+    min-height:180px;
+
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+
+    border-color:#2f80ed;
+
+    box-shadow:0 0 0 3px rgba(47,128,237,.08);
+
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+
+    color:#94a3b8;
+
+}
+
+/* Submit Button */
+.form-submit-btn{
+
+    align-self:flex-end;
+
+    margin-top:8px;
+
+    background:#29518f;
+
+    color:white;
+
+    border:none;
+
+    padding:15px 34px;
+
+    border-radius:12px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:0 10px 20px rgba(41,81,143,.18);
+
+}
+
+.form-submit-btn:hover{
+    background:#1d3f70;
+
+}
+
+.contact-side{
+    padding-top: 50px;
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+.contact-card{
+
+    background:white;
+
+    width:80%;
+
+    padding:14px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    border:1px solid #edf2f7;
+
+    
+}
+
+.contact-icon{
+
+    width:50px;
+
+    height:50px;
+
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:22px;
+
+}
+.contact-card h3{
+
+    margin:0 0 6px;
+
+    font-size:18px;
+
+    color:#10233f;
+
+}
+.contact-card p{
+
+    margin:0;
+
+    color:#29518f;
+
+    font-weight:700;
+
+    font-size:17px;
+
+}
+.contact-card span{
+
+    display:block;
+
+    margin-top:6px;
+
+    color:#64748b;
+
+    line-height:1.7;
+
+    font-size:15px;
+
+}
+
+/* --- 4. FOOTER (Đồng bộ tuyệt đối từ Home.jsx / About.css) --- */
+.hotel-footer {
+  width: 100%; 
+  margin: 0;              /* Tràn 100% chiều rộng màn hình */
+  
+  background: #10233f;       /* Giữ nguyên màu xanh tối sang trọng */
+  color: white;
+  border-radius: 0;          /* Loại bỏ bo góc tròn để sát sạt mép màn hình */
+  padding: 25px;   /* Thu nhỏ padding cực gọn (trên/dưới giảm mạnh) */
+  box-sizing: border-box;
+}
+
+.footer-grid {
+  width: 80%;                /* Đảm bảo nội dung chữ bên trong không bị dạt quá xa nhau trên màn hình lớn */
+  margin: 0 auto;            /* Căn giữa cụm nội dung */
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  gap: 40px;
+}
+
+.footer-grid h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  margin: 0 0 10px 0;
+}
+
+.footer-grid h3 {
+          margin: 0 0 15px 0;
+          font-size: 16px;           /* Thu nhỏ font của mục "Liên kết", "Liên hệ" */
+          font-weight: 600;
+          color: #d7e5f5; 
+}
+
+.footer-grid a {
+          display: block;
+          color: #d7e5f5;
+          margin-bottom: 4px;        /* Khít hơn, bớt khoảng trống */
+          text-decoration: none;
+          font-size: 14px;
+          transition: color 0.2s ease;
+}
+
+.footer-grid p {
+          color: #d7e5f5;
+          line-height: 1.6;
+          font-size: 14px;           /* Thu nhỏ chữ nội dung */
+          margin: 0 0 8px 0;
+}
+
+.copyright {
+          max-width: 1200px;
+          margin: 25px auto 0;       /* Thu nhỏ khoảng cách với phần trên */
+          padding-top: 15px;         /* Thu nhỏ padding của dòng copyright */
+          border-top: 1px solid rgba(255, 255, 255, .1);
+          text-align: center;
+          color: #8fa0b5;
+          font-size: 13px;
+}
+
+/* --- 5. RESPONSIVE --- */
+@media (max-width: 1024px) {
+  .contact-main-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .contact-info-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 0 16px 40px;
+  }
+  .form-row-double {
+    grid-template-columns: 1fr;
+  }
+  .contact-header h2 {
+    font-size: 36px;
+  }
+  .contact-page .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+@media(max-width:992px){
+
+.contact-main-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.form-row-double{
+
+grid-template-columns:1fr;
+
+}
+
+.contact-form-card{
+
+padding:28px;
+
+}
+
+.form-heading h2{
+
+font-size:34px;
+
+}
+
+}

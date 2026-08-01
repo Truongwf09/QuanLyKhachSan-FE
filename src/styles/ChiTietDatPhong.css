@@ -1,0 +1,291 @@
+.booking-detail {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 35px;
+
+}
+
+.back-btn {
+
+    background: #0d6efd;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 25px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    margin-bottom: 25px;
+
+    font-size: 15px;
+
+    transition: .3s;
+
+}
+
+.back-btn:hover {
+
+    background: #0b5ed7;
+
+}
+
+.detail-card {
+
+    display: flex;
+
+    gap: 35px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+
+}
+
+.detail-card img {
+
+    width: 420px;
+
+    height: 540px;
+
+    object-fit: cover;
+
+    background: #f5f5f5;
+
+}
+
+.detail-right {
+
+    flex: 1;
+
+    padding: 35px;
+
+}
+
+.detail-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+
+}
+
+.detail-header h2 {
+
+    margin: 0;
+
+    color: #0d6efd;
+
+}
+
+.detail-right table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+.detail-right td {
+
+    padding: 14px 12px;
+
+    border-bottom: 1px solid #eee;
+
+    font-size: 15px;
+
+}
+
+.detail-right td:first-child {
+
+    width: 180px;
+
+    font-weight: 600;
+
+    color: #555;
+
+}
+
+.status {
+
+    padding: 8px 18px;
+
+    border-radius: 20px;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+/* Trạng thái */
+
+.status.chưa-xác-nhận {
+
+    background: #ff9800;
+
+}
+
+.status.đã-xác-nhận {
+
+    background: #4caf50;
+
+}
+
+.status.đã-hủy {
+
+    background: #f44336;
+
+}
+
+.status.trả-phòng {
+
+    background: #2196f3;
+
+}
+
+.status.đã-nhận-phòng {
+
+    background: #673ab7;
+
+}
+
+.total-money {
+
+    margin-top: 25px;
+
+    text-align: right;
+
+    font-size: 28px;
+
+    color: #e53935;
+
+    font-weight: bold;
+
+}
+
+.action-group {
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 30px;
+
+}
+
+.action-group button {
+
+    border: none;
+
+    padding: 12px 22px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition: .3s;
+
+}
+
+.btn-primary {
+
+    background: #0d6efd;
+
+    color: white;
+
+}
+
+.btn-primary:hover {
+
+    background: #0b5ed7;
+
+}
+
+.btn-danger {
+
+    background: #dc3545;
+
+    color: white;
+
+}
+
+.btn-danger:hover {
+
+    background: #bb2d3b;
+
+}
+
+.btn-success {
+
+    background: #198754;
+
+    color: white;
+
+}
+
+.btn-success:hover {
+
+    background: #157347;
+
+}
+
+/* Mobile */
+
+@media (max-width: 992px) {
+
+    .detail-card {
+
+        flex-direction: column;
+
+    }
+
+    .detail-card img {
+
+        width: 100%;
+
+        height: 280px;
+
+    }
+
+    .detail-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+    }
+
+    .detail-right td:first-child {
+
+        width: 120px;
+
+    }
+
+    .action-group {
+
+        flex-wrap: wrap;
+
+    }
+
+}

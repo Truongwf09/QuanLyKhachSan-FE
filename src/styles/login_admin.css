@@ -1,0 +1,140 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+.login-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #eef4ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 1000px;
+  min-height: 520px;
+  background: #fff;
+  border-radius: 35px;
+  border: 6px solid #2d63c8;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+  background-image: url("../../assets/login_bg_admin.jpg");
+}
+
+.login-left {
+  width: 35%;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #223b63;
+  margin-bottom: 70px;
+}
+
+.login-left h1 {
+  font-size: 42px;
+  color: #223b63;
+  margin-bottom: 15px;
+}
+
+.sub-text {
+  color: #8f98a8;
+  font-size: 14px;
+  margin-bottom: 50px;
+  max-width: 280px;
+}
+
+.input-group {
+  margin-bottom: 25px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #223b63;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.input-group input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #d5dcef;
+  padding: 12px 0;
+  outline: none;
+  font-size: 15px;
+  border-radius: 3px;
+  /* border-bottom: 1px solid transparent; */
+}
+
+.input-group input:focus {
+  border-color: #4f7ef7;
+}
+
+.login-btn {
+  width: 150px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background: #32548c;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(34, 59, 99, 0.3);
+}
+
+/* .login-right {
+  width: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+}
+
+.login-right img {
+  width: 95%;
+  max-width: 900px;
+  object-fit: contain;
+} */
+
+@media (max-width: 992px) {
+  .login-card {
+    flex-direction: column;
+  }
+
+  .login-left,
+  .login-right {
+    width: 100%;
+  }
+
+  .login-left {
+    padding: 40px;
+  }
+
+  .login-right {
+    padding: 20px;
+  }
+
+  .login-left h1 {
+    font-size: 42px;
+  }
+}
+

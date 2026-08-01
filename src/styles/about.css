@@ -1,0 +1,481 @@
+/* ==========================================================================
+   ABOUT PAGE STYLE - TEALHAVEN
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+.about-page {
+  width: 100%;
+  padding: 0 35px 60px;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+}
+
+.about-page * {
+  box-sizing: border-box;
+}
+
+/* --- 1. HERO SECTION (Kế thừa từ Home.jsx) --- */
+.hero-shell-about {
+  text-align: center;
+  padding-top: 15px;
+}
+
+.hero-shell-about .eyebrow {
+  font-size: 13px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  color: #64748b;
+  margin-bottom: 14px;
+}
+
+.hero-shell-about h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 65px;
+  line-height: 1.05;
+  color: #0d1b2a;
+  margin: 16px 0;
+  max-width: 520px;
+}
+
+.hero-shell-about .hero-text p {
+  color: #4f6478;
+  font-size: 18px;
+  line-height: 1.8;
+  max-width: 480px;
+  margin: 0;
+}
+
+.hero-shell-about .hero-image {
+  position: relative;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  overflow: hidden;
+}
+
+.hero-shell-about .hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.hero-shell-about .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.35) 30%, rgba(15, 76, 129, 0.08) 100%);
+}
+
+/* --- 2. STORY & QUOTE SECTION --- */
+.story-section {
+  padding-top: 40px;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.story-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  color: #0d1b2a;
+  margin-bottom: 8px;
+}
+
+.story-content p {
+  color: #3c3e41;
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 0 0 15px 0;
+  text-align: justify;
+}
+
+/* Quote Box (Cố định viền xanh Navy chuẩn) */
+.story-quote {
+  background: white;
+  border: 1px solid #d9e5f2;
+  border-left: 6px solid #0f4c81;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 15px 45px rgba(15, 76, 129, 0.06);
+}
+
+.story-quote p {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 600;
+  color: #0d1b2a;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+}
+
+.story-quote cite {
+  font-size: 13px;
+  color: #29518f;
+  font-weight: 700;
+  font-style: normal;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* --- 3. STATS SECTION (Đồng bộ tuyệt đối từ Home.jsx) --- */
+/* ================= STATS ================= */
+
+.stats-section {
+
+  width: 100%;
+
+  margin: 45px 0;
+
+  background: #fff;
+
+  overflow: hidden;
+
+  /* box-shadow:0 18px 45px rgba(47,128,237,.18); */
+
+}
+
+.stats-container {
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  align-items: center;
+
+  text-align: center;
+
+  height: 130px;
+
+}
+
+.stat-item {
+
+  color: #29518f;
+
+  padding: 15px;
+
+  position: relative;
+
+}
+
+.stat-item:not(:last-child) {
+
+  border-right: 1px solid #8fa6c7;
+
+}
+
+.stat-item svg {
+
+  font-size: 25px;
+
+  margin-bottom: 8px;
+
+  opacity: .95;
+
+}
+
+.stat-item h3 {
+
+  margin: 0;
+
+  font-size: 30px;
+
+  font-weight: 550;
+
+  line-height: 1;
+  color: #29518f;
+
+}
+
+.stat-item span {
+
+  display: block;
+
+  margin-top: 10px;
+
+  font-size: 16px;
+
+  opacity: .9;
+
+  letter-spacing: .3px;
+  color: #29518f;
+
+}
+
+
+
+/* --- 4. CORE VALUES SECTION --- */
+.core-map-section {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 60px;
+  margin: 60px 0;
+  align-items: flex-start;
+}
+
+.core-column h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  color: #0d1b2a;
+  margin-bottom: 8px;
+}
+
+.core-desc {
+  color: #3c3e41;
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 0 0 10px 0;
+  text-align: justify;
+}
+
+/* ===== Danh sách giá trị cốt lõi ===== */
+
+.core-list {
+  margin-top: 30px;
+  padding: 5px 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #edf2f7;
+}
+
+.core-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 10px;
+  border-bottom: 1px solid #8fa6c7;
+  transition: .25s ease;
+}
+
+.core-item:last-child {
+  border-bottom: none;
+}
+
+/* ===== Nội dung ===== */
+
+.core-item h3 {
+  margin: 0 0 2px;
+  color: #10233f;
+  font-size: 21px;
+  font-weight: 550;
+}
+
+.core-item p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+.branch-select {
+  width: 60%;
+  padding: 14px 18px;
+  border: 1px solid #dbe5ef;
+  border-radius: 12px;
+  margin: 20px 0;
+  font-size: 15px;
+}
+
+.branch-map {
+  width: 70%;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+}
+
+.branch-column h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  color: #0d1b2a;
+  margin-bottom: 8px;
+}
+
+.branch-map iframe {
+  width: 100%;
+  height: 260px;
+  border: none;
+}
+
+.branch-info {
+  margin-top: 22px;
+}
+
+.branch-info h3 {
+  margin-bottom: 12px;
+}
+
+.branch-info p {
+  margin-bottom: 8px;
+  color: #64748b;
+}
+
+.branch-btn {
+  text-decoration: none;
+  color: #1e88e5;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.branch-btn:hover {
+  color: #29518f;
+  transform: translateX(4px);
+}
+
+@media(max-width:992px) {
+  .core-map-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- 6. FOOTER (Kế thừa đồng bộ từ Home.jsx) --- */
+.hotel-footer {
+  width: 100%;
+  margin: 0;
+  /* Tràn 100% chiều rộng màn hình */
+
+  background: #10233f;
+  /* Giữ nguyên màu xanh tối sang trọng */
+  color: white;
+  border-radius: 0;
+  /* Loại bỏ bo góc tròn để sát sạt mép màn hình */
+  padding: 25px;
+  /* Thu nhỏ padding cực gọn (trên/dưới giảm mạnh) */
+  box-sizing: border-box;
+}
+
+.footer-grid {
+  width: 80%;
+  /* Đảm bảo nội dung chữ bên trong không bị dạt quá xa nhau trên màn hình lớn */
+  margin: 0 auto;
+  /* Căn giữa cụm nội dung */
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  gap: 40px;
+}
+
+.footer-grid h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  margin: 0 0 10px 0;
+}
+
+.footer-grid h3 {
+  margin: 0 0 15px 0;
+  font-size: 16px;
+  /* Thu nhỏ font của mục "Liên kết", "Liên hệ" */
+  font-weight: 600;
+  color: #d7e5f5;
+}
+
+.footer-grid a {
+  display: block;
+  color: #d7e5f5;
+  margin-bottom: 4px;
+  /* Khít hơn, bớt khoảng trống */
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.footer-grid p {
+  color: #d7e5f5;
+  line-height: 1.6;
+  font-size: 14px;
+  /* Thu nhỏ chữ nội dung */
+  margin: 0 0 8px 0;
+}
+
+.copyright {
+  max-width: 1200px;
+  margin: 25px auto 0;
+  /* Thu nhỏ khoảng cách với phần trên */
+  padding-top: 15px;
+  /* Thu nhỏ padding của dòng copyright */
+  border-top: 1px solid rgba(255, 255, 255, .1);
+  text-align: center;
+  color: #8fa0b5;
+  font-size: 13px;
+}
+
+/* ==========================================================================
+   RESPONSIVE (Đồng bộ Tablet & Mobile)
+   ========================================================================== */
+
+@media (max-width: 1100px) {
+  .hero-shell-about .hero-content {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-shell-about .hero-image {
+    display: none;
+    /* Ẩn ảnh hero trên tablet/mobile để tập trung vào text */
+  }
+
+  .hero-shell-about h1 {
+    font-size: 48px;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-page .stats-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-page .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .branches-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-page {
+    padding: 0 16px 40px;
+  }
+
+  .hero-shell-about .hero-text {
+    padding: 40px 20px;
+  }
+
+  .about-page .stats-section,
+  .about-page .why-grid,
+  .branches-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-page .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media(max-width:768px) {
+
+  .stats-container {
+
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+
+  .stat-item {
+
+    border-right: none !important;
+
+    border-bottom: 1px solid rgba(255, 255, 255, .15);
+
+  }
+
+}
